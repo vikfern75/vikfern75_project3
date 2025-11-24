@@ -1,43 +1,57 @@
-/* Base (mobile-first) */
-:root{
-  --accent: #c0392b;
-  --bg: #ffffff;
-  --muted: #666;
-  --card: #f7f7f7;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.5;
+  background: #fff;
+  color: #222;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background:var(--bg);
-  color:#222;
-  padding:1rem;
-  line-height:1.5;
-}
-.site-header{margin-bottom:1rem}
-.nav { list-style:none; padding:0; display:flex; gap:0.5rem; flex-wrap:wrap; }
-.nav a { text-decoration:none; padding:.45rem .6rem; display:inline-block; border-radius:6px; }
-.site-title { font-size:1.4rem; margin:0.5rem 0; }
-.hero { background:var(--card); padding:1rem; border-radius:10px; display:block; }
-.hero-image img{ max-width:100%; height:auto; display:block; margin-top:1rem; border-radius:8px; }
-.content { margin-top:1rem; }
-.btn { background:var(--accent); color:white; border:none; padding:.6rem 1rem; border-radius:8px; cursor:pointer; font-weight:600; }
 
-/* small tablets / large phones */
+header, footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.3rem; }
+
+button {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+/* Media query 1 - min-width 480px */
 @media (min-width: 480px) {
-  body { padding: 1.5rem; }
-  .site-title { font-size:1.8rem; }
-  .nav { gap: 1rem; }
-  .hero { padding:1.25rem; background:#f0f8ff; border-radius:12px; }
-  .btn { padding:.7rem 1.1rem; border-radius:9px; }
+  body { padding: 2rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  button { padding: 0.6rem 1.2rem; }
 }
 
-/* tablets / small desktops */
+/* Media query 2 - min-width 800px */
 @media (min-width: 800px) {
-  body { max-width:1100px; margin:0 auto; padding:2rem; }
-  .hero { display:grid; grid-template-columns: 1fr 360px; gap:1rem; padding:2rem; }
-  .site-title { font-size:2.2rem; }
-  .nav { gap:1.5rem; align-items:center; }
-  .btn { padding:.85rem 1.25rem; font-size:1rem; border-radius:10px; }
-  .hero-image img { border-radius:12px; }
+  body { max-width: 1000px; margin: 0 auto; padding: 2.5rem; }
+  nav ul { justify-content: flex-start; gap: 2rem; }
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; }
+  button { padding: 0.8rem 1.5rem; font-size: 1rem; }
 }
