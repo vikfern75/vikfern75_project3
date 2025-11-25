@@ -20,17 +20,22 @@
 <div class="container">
     <h1>Welcome to Project 3</h1>
     <h2>Home Page Content</h2>
-    <p>This is the home page for Project 3. Buttons are interactive and everything matches Project 3 style.</p>
+    <p>This is the home page. Buttons work and style matches Project 3.</p>
 
-    <button>Questions?</button>
+    <button id="questionButton">Questions?</button>
 
     <footer>
         © 2025 Viktor Fernandez
     </footer>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap" async defer></script>
-<script src="js/scripts.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('questionButton').addEventListener('click', () => {
+        alert("Feel free to ask any questions!");
+    });
+});
+</script>
 
 </body>
 </html>
