@@ -23,15 +23,39 @@
 
     <div id="map"></div>
 
-    <button>Questions?</button>
+    <button id="questionButton">Questions?</button>
 
     <footer>
         © 2025 Viktor Fernandez
     </footer>
 </div>
 
+<!-- Scripts -->
+<script>
+    // Make initMap global for Google Maps callback
+    function initMap() {
+        const chicago = { lat: 41.8781, lng: -87.6298 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: chicago
+        });
+        new google.maps.Marker({
+            position: chicago,
+            map: map,
+            title: "Chicago, IL"
+        });
+    }
+
+    // Wait for DOM to load before adding button listener
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('questionButton');
+        btn.addEventListener('click', () => {
+            alert("Feel free to ask any questions!");
+        });
+    });
+</script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap" async defer></script>
-<script src="js/scripts.js"></script>
 
 </body>
 </html>
