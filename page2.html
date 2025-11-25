@@ -20,17 +20,22 @@
 <div class="container">
     <h1>Page 2</h1>
     <h2>Page 2 Content</h2>
-    <p>This is Page 2. Buttons work and the layout matches Project 3.</p>
+    <p>This is Page 2. Buttons work and layout matches Project 3.</p>
 
-    <button>Questions?</button>
+    <button id="questionButton">Questions?</button>
 
     <footer>
         © 2025 Viktor Fernandez
     </footer>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap" async defer></script>
-<script src="js/scripts.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('questionButton').addEventListener('click', () => {
+        alert("Feel free to ask any questions!");
+    });
+});
+</script>
 
 </body>
 </html>
