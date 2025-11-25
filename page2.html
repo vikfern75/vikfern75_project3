@@ -5,26 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project 3 - Page 2</title>
 
-<style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    nav { background: #333; padding: 10px; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; }
-    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
-    nav ul li a:hover { text-decoration: underline; }
-    .container {
-        width: 90%;
-        max-width: 900px;
-        margin: 30px auto;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    footer { margin-top: 20px; text-align: center; color: #555; font-size: 14px; }
-</style>
+<!-- Load external CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Load JavaScript unobtrusively -->
+<script src="script.js" defer></script>
 
 </head>
 <body>
+
+<header>
+  <h1>Project 3 - Page 2</h1>
+</header>
 
 <nav>
     <ul>
@@ -35,13 +27,17 @@
     </ul>
 </nav>
 
-<div class="container">
-    <h1>Page 2</h1>
+<main>
+  <h2>Welcome to Page 2</h2>
+  <p>This is the content for Page 2 of Project 3.</p>
 
-    <p>This is Page 2 for Project 3. Add your content here.</p>
+  <!-- Questions button must include the class -->
+  <button class="questions">Questions?</button>
+</main>
 
-    <footer>© 2025 Viktor Fernandez</footer>
-</div>
+<footer>
+  © 2025 Viktor Fernandez
+</footer>
 
 </body>
 </html>
