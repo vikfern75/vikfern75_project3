@@ -4,54 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project 3 - Map</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<style>
+  #map {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="page2.html">Page 2</a></li>
-        <li><a href="page3.html">Page 3</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="career.html">Career</a></li>
         <li><a href="map.html">Map</a></li>
     </ul>
 </nav>
 
 <div class="container">
-    <h1>Interactive Google Map</h1>
-    <p>Centered on Chicago, IL. Pan and zoom to explore!</p>
+    <h1>Map - Chicago</h1>
+    <p>This map shows the location of Chicago, fully integrated into Project 3.</p>
 
     <div id="map"></div>
 
     <button id="questionButton">Questions?</button>
 
-    <footer>
-        © 2025 Viktor Fernandez
-    </footer>
+    <footer>© 2025 Viktor Fernandez</footer>
 </div>
 
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-function initMap() {
-    const chicago = { lat: 41.8781, lng: -87.6298 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: chicago
-    });
-    new google.maps.Marker({
-        position: chicago,
-        map: map,
-        title: "Chicago, IL"
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('questionButton').addEventListener('click', () => {
+    // Questions button
+    const btn = document.getElementById('questionButton');
+    if(btn) btn.addEventListener('click', () => {
         alert("Feel free to ask any questions!");
     });
+
+    // Initialize map
+    const map = L.map('map').setView([41.8781, -87.6298], 12); // Chicago coords
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add a marker for Chicago
+    L.marker([41.8781, -87.6298]).addTo(map)
+        .bindPopup('Chicago, IL')
+        .openPopup();
 });
 </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap" async defer></script>
 
 </body>
 </html>
