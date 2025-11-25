@@ -1,4 +1,4 @@
-// Initialize Google Map
+// Initialize Google Map (if #map exists)
 function initMap() {
     const mapDiv = document.getElementById("map");
     if (mapDiv) {
@@ -7,7 +7,7 @@ function initMap() {
             zoom: 12,
             center: chicago
         });
-        const marker = new google.maps.Marker({
+        new google.maps.Marker({
             position: chicago,
             map: map,
             title: "Chicago, IL"
@@ -15,18 +15,12 @@ function initMap() {
     }
 }
 
-// Initialize buttons
-function initButtons() {
+// Button click alerts
+document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('button');
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             alert("Feel free to ask any questions!");
         });
     });
-}
-
-// Run on page load
-window.onload = function() {
-    initMap();
-    initButtons();
-};
+});
