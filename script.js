@@ -1,38 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const questionButtons = document.querySelectorAll(".questionBtn");
-  questionButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      alert("If you have questions, contact me at:\nviktor.fernandez@example.com");
+document.addEventListener("DOMContentLoaded", () => {
+    // Add event listener to all “Questions?” buttons on all pages
+    const questionButtons = document.querySelectorAll("button.questions");
+
+    questionButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            alert("If you have questions, contact me at:\nvikfern75@gmail.com");
+        });
     });
-  });
 });
 
+// Google Maps API callback
 function initMap() {
-  const center = { lat: 41.8781, lng: -87.6298 };
-  const map = new google.maps.Map(document.getElementById("map"), { zoom: 12, center: center });
+    const centerPoint = { lat: 28.5384, lng: -81.3789 }; // Orlando example
 
-  // Marker + InfoWindow
-  const marker = new google.maps.Marker({ position: center, map: map, title: "Chicago" });
-  const infoWindow = new google.maps.InfoWindow({ content: "<h3>Chicago</h3><p>Welcome to the map!</p>" });
-  marker.addListener("click", () => infoWindow.open(map, marker));
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: centerPoint,
+    });
 
-  // Circle overlay
-  new google.maps.Circle({
-    map: map,
-    center: center,
-    radius: 1500,
-    strokeColor: "#0000FF",
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: "#0000FF",
-    fillOpacity: 0.2,
-  });
+    // 1️⃣ Marker
+    const marker = new google.maps.Marker({
+        position: centerPoint,
+        map: map,
+        title: "Center Marker"
+    });
 
-  // Polygon
-  const polygonCoords = [
-    { lat: 41.88, lng: -87.63 },
-    { lat: 41.875, lng: -87.62 },
-    { lat: 41.87, lng: -87.64 }
-  ];
-  new google.maps.Polygon({ paths: polygonCoords, strokeColor: "#FF0000", strokeOpacity: 0.8, strokeWeight: 2, fillColor: "#FF0000", fillOpacity: 0.25, map: map });
+    // 2️⃣ InfoWindow
+    const infoWindow = new google.maps.InfoWindow({
+        content: "<h3>Welcome to Orlando!</h3><p>This is the center point.</p>"
+    });
+
+    marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+    });
+
+    // 3️⃣ Circle Around Marker
+    new google.maps.Circle({
+        strokeColor: "#FF0000",
+        strokeWeight: 2,
+        fillColor: "#FF0000",
+        fillOpacity: 0.15,
+        map,
+        center: centerPoint,
+        radius: 2000
+    });
 }
