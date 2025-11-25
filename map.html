@@ -5,18 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project 3 - Map</title>
 
-<!-- Your site CSS -->
-<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+        color: #333;
+    }
 
-<!-- Your JavaScript -->
-<script src="script.js" defer></script>
+    nav {
+        background: #333;
+        padding: 10px;
+    }
 
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 900px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    #map {
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+    }
+
+    footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #555;
+        font-size: 14px;
+    }
+</style>
 </head>
 <body>
-
-<header>
-  <h1>Google Map</h1>
-</header>
 
 <nav>
     <ul>
@@ -27,24 +76,40 @@
     </ul>
 </nav>
 
-<main>
-  <h2>Interactive Google Map</h2>
-  <p>Below is the required Project 3 Google Map with 3 added features.</p>
+<div class="container">
+    <h1>Interactive Google Map</h1>
+    <p>Below is the interactive map centered on Chicago, IL:</p>
 
-  <!-- Map container -->
-  <div id="map" style="height: 500px; width: 100%;"></div>
+    <div id="map"></div>
 
-  <!-- Questions button -->
-  <button class="questions">Questions?</button>
-</main>
+    <footer>
+        Questions? © 2025 Viktor Fernandez
+    </footer>
+</div>
 
-<footer>
-  © 2025 Viktor Fernandez
-</footer>
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE"></script>
+<script>
+    function initMap() {
+        // Chicago coordinates
+        const chicago = { lat: 41.8781, lng: -87.6298 };
 
-<!-- Google Maps API script MUST be last -->
-<script async
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1F-BpX660SBK3-Vw9O9f7AEvTAIH8rI&callback=initMap">
+        // Create map
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: chicago,
+        });
+
+        // Add a marker
+        const marker = new google.maps.Marker({
+            position: chicago,
+            map: map,
+            title: "Chicago, IL",
+        });
+    }
+
+    // Initialize map after page loads
+    window.onload = initMap;
 </script>
 
 </body>
