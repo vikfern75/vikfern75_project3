@@ -5,33 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project 3 - Map</title>
 
-<style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    nav { background: #333; padding: 10px; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; }
-    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
-    nav ul li a:hover { text-decoration: underline; }
-    .container {
-        width: 90%;
-        max-width: 900px;
-        margin: 30px auto;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-    iframe {
-        width: 100%;
-        height: 400px;
-        border: none;
-        border-radius: 8px;
-    }
-    footer { margin-top: 20px; text-align: center; color: #555; font-size: 14px; }
-</style>
+<!-- Your site CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Your JavaScript -->
+<script src="script.js" defer></script>
 
 </head>
 <body>
+
+<header>
+  <h1>Google Map</h1>
+</header>
 
 <nav>
     <ul>
@@ -42,19 +27,25 @@
     </ul>
 </nav>
 
-<div class="container">
-    <h1>Map</h1>
+<main>
+  <h2>Interactive Google Map</h2>
+  <p>Below is the required Project 3 Google Map with 3 added features.</p>
 
-    <!-- Replace this iframe with your live Google Map embed -->
-    <iframe src="https://maps.google.com/maps?q=Chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  <!-- Map container -->
+  <div id="map" style="height: 500px; width: 100%;"></div>
 
-    <footer>© 2025 Viktor Fernandez</footer>
-</div>
-<div id="map" style="width:100%; height:400px;"></div>
+  <!-- Questions button -->
+  <button class="questions">Questions?</button>
+</main>
 
-</body>
-  <script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1F-BpX660SBK3-Vw9O9f7AEvTAIH8rI&callback=initMap">
+<footer>
+  © 2025 Viktor Fernandez
+</footer>
+
+<!-- Google Maps API script MUST be last -->
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1F-BpX660SBK3-Vw9O9f7AEvTAIH8rI&callback=initMap">
 </script>
 
+</body>
 </html>
