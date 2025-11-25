@@ -1,47 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Add event listener to all “Questions?” buttons on all pages
-    const questionButtons = document.querySelectorAll("button.questions");
+// Initialize Google Map
+function initMap() {
+    const mapDiv = document.getElementById("map");
+    if (mapDiv) {
+        const chicago = { lat: 41.8781, lng: -87.6298 };
+        const map = new google.maps.Map(mapDiv, {
+            zoom: 12,
+            center: chicago
+        });
+        const marker = new google.maps.Marker({
+            position: chicago,
+            map: map,
+            title: "Chicago, IL"
+        });
+    }
+}
 
-    questionButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            alert("If you have questions, contact me at:\nvikfern75@gmail.com");
+// Initialize buttons
+function initButtons() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            alert("Feel free to ask any questions!");
         });
     });
-});
-
-// Google Maps API callback
-function initMap() {
-    const centerPoint = { lat: 28.5384, lng: -81.3789 }; // Orlando example
-
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: centerPoint,
-    });
-
-    // 1️⃣ Marker
-    const marker = new google.maps.Marker({
-        position: centerPoint,
-        map: map,
-        title: "Center Marker"
-    });
-
-    // 2️⃣ InfoWindow
-    const infoWindow = new google.maps.InfoWindow({
-        content: "<h3>Welcome to Orlando!</h3><p>This is the center point.</p>"
-    });
-
-    marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-    });
-
-    // 3️⃣ Circle Around Marker
-    new google.maps.Circle({
-        strokeColor: "#FF0000",
-        strokeWeight: 2,
-        fillColor: "#FF0000",
-        fillOpacity: 0.15,
-        map,
-        center: centerPoint,
-        radius: 2000
-    });
 }
+
+// Run on page load
+window.onload = function() {
+    initMap();
+    initButtons();
+};
