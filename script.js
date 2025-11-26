@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ---------- LEAFLET MAP (only if #map exists) ----------
+    // ---------- LEAFLET MAP (only on map.html) ----------
     const mapDiv = document.getElementById('map');
     if (mapDiv) {
         const map = L.map('map').setView([41.8781, -87.6298], 12);
