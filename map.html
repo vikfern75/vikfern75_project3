@@ -29,25 +29,23 @@
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="js/script.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Leaflet map
     const map = L.map('map').setView([41.8781, -87.6298], 12);
 
-    // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Add marker for Chicago
+    // Add a marker for Chicago
     L.marker([41.8781, -87.6298]).addTo(map)
         .bindPopup('Chicago, IL')
         .openPopup();
 
     // Button alert
     const button = document.getElementById('questionButton');
-    button.addEventListener('click', () => {
+    button.addEventListener('click', function() {
         alert('Feel free to ask any questions! Email: vfernandez@illinoistech.edu');
     });
 });
