@@ -17,30 +17,26 @@ document.addEventListener('DOMContentLoaded', function() {
             mapTypeId: 'roadmap'
         });
 
-        // Marker
         const marker = new google.maps.Marker({
             position: chicago,
             map: map,
             title: 'Chicago, IL'
         });
 
-        // Info window
         const infoWindow = new google.maps.InfoWindow({
             content: '<strong>Chicago, IL</strong>'
         });
         marker.addListener('click', () => infoWindow.open(map, marker));
 
-        // Circle overlay
         new google.maps.Circle({
             center: chicago,
             map: map,
-            radius: 5000, // 5 km radius
+            radius: 5000,
             fillColor: '#FF0000',
             fillOpacity: 0.2,
             strokeColor: '#FF0000'
         });
 
-        // Click listener
         map.addListener('click', function(e) {
             alert(`You clicked at coordinates: ${e.latLng.lat().toFixed(4)}, ${e.latLng.lng().toFixed(4)}`);
         });
