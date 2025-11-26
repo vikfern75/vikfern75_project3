@@ -1,18 +1,18 @@
-// Questions button alert
+// Button click alert
 document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.question-button');
-    buttons.forEach(btn => {
+    const btn = document.getElementById('questionButton');
+    if (btn) {
         btn.addEventListener('click', () => {
             alert("If you have questions, contact me at:\nvfernandez@illinoistech.edu");
         });
-    });
+    }
 });
 
-// Initialize Google Map
+// Google Maps initialization
 function initMap() {
-    const mapDiv = document.getElementById("map");
+    const chicago = { lat: 41.8781, lng: -87.6298 };
+    const mapDiv = document.getElementById('map');
     if (mapDiv) {
-        const chicago = { lat: 41.8781, lng: -87.6298 };
         const map = new google.maps.Map(mapDiv, {
             zoom: 12,
             center: chicago
