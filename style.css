@@ -1,4 +1,4 @@
-/* Base Styles */
+/* BASE STYLES */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,31 +6,29 @@ body {
     background: #f5f5f5;
 }
 
-nav {
-    background: #333;
-    padding: 10px 0;
+h1 {
+    margin-top: 0;
 }
 
-nav ul {
+ul.nav {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
     gap: 15px;
-    justify-content: center;
+    background: #333;
 }
 
-nav ul li a {
+ul.nav li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #007BFF;
-    border-radius: 4px;
+ul.nav li a:hover,
+ul.nav li a.active {
+    text-decoration: underline;
 }
 
 .container {
@@ -43,38 +41,6 @@ nav ul li a.active {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-h1 {
-    margin-top: 0;
-}
-
-h2 {
-    margin-top: 20px;
-}
-
-ul.list {
-    margin-left: 20px;
-}
-
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.images img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-/* Video and Audio */
-video, audio {
-    margin-top: 15px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-/* Buttons */
 button.question-button {
     background: #007BFF;
     color: white;
@@ -89,16 +55,6 @@ button.question-button:hover {
     background: #0056b3;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-    padding: 10px 0;
-}
-
-/* Map */
 #map {
     height: 500px;
     width: 100%;
@@ -106,46 +62,49 @@ footer {
     margin-top: 20px;
 }
 
-/* Media Queries - Mobile Friendly */
-
-/* For screens up to 768px wide */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    .images {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    video, audio {
-        width: 100%;
-    }
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
 }
 
-/* For screens up to 480px wide */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
+/* MEDIA QUERIES */
+
+/* For screens >= 600px */
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
     }
 
-    h2 {
-        font-size: 1.2rem;
+    h1 {
+        font-size: 2.2em;
+    }
+
+    ul.nav {
+        justify-content: center;
     }
 
     button.question-button {
-        width: 100%;
-        padding: 12px 0;
+        padding: 12px 20px;
+    }
+}
+
+/* For screens >= 900px */
+@media (min-width: 900px) {
+    body {
+        font-size: 20px;
     }
 
-    nav ul li a {
-        padding: 8px;
-        text-align: center;
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    ul.nav {
+        gap: 25px;
     }
 }
