@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Questions button alert
-    const button = document.getElementById('questionButton');
-    if(button) {
+    const buttons = document.querySelectorAll('.question-button');
+    buttons.forEach(button => {
         button.addEventListener('click', function() {
             alert('Feel free to ask any questions! Email: vfernandez@illinoistech.edu');
         });
-    }
+    });
 
     // Leaflet map (only for map.html)
     const mapDiv = document.getElementById('map');
