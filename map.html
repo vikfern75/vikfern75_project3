@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Map Page</title>
+<title>Map – Chicago</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -20,17 +20,37 @@
 
 <div class="container">
 <h1>Map – Chicago</h1>
-
-<p>Here is the location of Chicago, IL. You can also click the button below if you have questions!</p>
+<p>Here is the location of Chicago, IL. Click the button below if you have questions!</p>
 
 <div id="map"></div>
-
-<button>Questions?</button>
+<button id="questionButton">Questions?</button>
 
 <footer>© 2025 Viktor Fernandez</footer>
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Leaflet map
+    const map = L.map('map').setView([41.8781, -87.6298], 12);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add marker for Chicago
+    L.marker([41.8781, -87.6298]).addTo(map)
+        .bindPopup('Chicago, IL')
+        .openPopup();
+
+    // Button alert
+    const button = document.getElementById('questionButton');
+    button.addEventListener('click', () => {
+        alert('Feel free to ask any questions! Email: vfernandez@illinoistech.edu');
+    });
+});
+</script>
 </body>
 </html>
