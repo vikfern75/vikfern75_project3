@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Google Map (only map.html)
+    // Google Map
     const mapDiv = document.getElementById('map');
     if(mapDiv) {
         const chicago = { lat: 41.8781, lng: -87.6298 };
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         marker.addListener('click', () => infoWindow.open(map, marker));
 
-        // Circle around Chicago
+        // Circle overlay
         new google.maps.Circle({
             center: chicago,
             map: map,
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             strokeColor: '#FF0000'
         });
 
-        // Add click listener to map
+        // Click listener
         map.addListener('click', function(e) {
             alert(`You clicked at coordinates: ${e.latLng.lat().toFixed(4)}, ${e.latLng.lng().toFixed(4)}`);
         });
