@@ -23,32 +23,14 @@
 <p>Here is the location of Chicago, IL. Click the button below if you have questions!</p>
 
 <div id="map"></div>
+
+<!-- Questions button -->
 <button id="questionButton">Questions?</button>
 
 <footer>© 2025 Viktor Fernandez</footer>
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Leaflet map
-    const map = L.map('map').setView([41.8781, -87.6298], 12);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-    // Add a marker for Chicago
-    L.marker([41.8781, -87.6298]).addTo(map)
-        .bindPopup('Chicago, IL')
-        .openPopup();
-
-    // Button alert
-    const button = document.getElementById('questionButton');
-    button.addEventListener('click', function() {
-        alert('Feel free to ask any questions! Email: vfernandez@illinoistech.edu');
-    });
-});
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
