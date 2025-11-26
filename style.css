@@ -1,81 +1,151 @@
-/* Base styles */
+/* Base Styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
 }
 
 nav {
-  background: #333;
-  padding: 10px;
+    background: #333;
+    padding: 10px 0;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  text-decoration: underline;
+    background-color: #007BFF;
+    border-radius: 4px;
 }
 
 .container {
-  width: 90%;
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-h1 { margin-top: 0; }
-
-button {
-  background: #007BFF;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
+h1 {
+    margin-top: 0;
 }
 
-button:hover { background: #0056b3; }
+h2 {
+    margin-top: 20px;
+}
 
+ul.list {
+    margin-left: 20px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.images img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Video and Audio */
+video, audio {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button.question-button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button.question-button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
 footer {
-  margin-top: 20px;
-  text-align: center;
-  color: #555;
-  font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    padding: 10px 0;
 }
 
+/* Map */
 #map {
-  height: 500px;
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 20px;
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
-/* Media queries */
-@media (min-width: 600px) {
-  .container { padding: 25px; }
-  h1 { font-size: 2.5em; }
-  button { padding: 12px 18px; }
+/* Media Queries - Mobile Friendly */
+
+/* For screens up to 768px wide */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .images {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    video, audio {
+        width: 100%;
+    }
 }
 
-@media (min-width: 900px) {
-  .container { padding: 30px; }
-  h1 { font-size: 3em; }
-  button { padding: 15px 20px; font-size: 1.1em; }
+/* For screens up to 480px wide */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    button.question-button {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    nav ul li a {
+        padding: 8px;
+        text-align: center;
+    }
 }
