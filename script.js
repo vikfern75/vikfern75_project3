@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-    // Button click alerts
+    // — Button alert
     const buttons = document.querySelectorAll('button');
     buttons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Leaflet map initialization
+    // — Leaflet map (only if #map exists)
     const mapDiv = document.getElementById('map');
     if (mapDiv) {
         const map = L.map('map').setView([41.8781, -87.6298], 12);
