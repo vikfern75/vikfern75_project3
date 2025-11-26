@@ -71,19 +71,35 @@ footer {
     margin-top: 20px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+.images img {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+/* MEDIA QUERY 1: For devices wider than 480px */
+@media (min-width: 480px) {
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 20px;
     }
-
-    button, video, audio, img {
-        width: 100%;
-        max-width: 100%;
+    h1 {
+        font-size: 2em;
     }
+    button.question-button {
+        padding: 12px 18px;
+    }
+}
 
-    .images img {
-        margin-bottom: 10px;
+/* MEDIA QUERY 2: For devices wider than 768px */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1000px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    button.question-button {
+        padding: 15px 20px;
+        font-size: 1em;
     }
 }
