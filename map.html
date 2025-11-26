@@ -3,38 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project 3 - Map</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<title>Map - Chicago</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="career.html">Career</a></li>
-<li><a href="map.html">Map</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="page3.html">Career</a></li>
+    <li><a href="map.html" class="active">Map</a></li>
 </ul>
 </nav>
 
 <div class="container">
-<h1>Map - Chicago</h1>
+<h1>Chicago Map</h1>
+
 <div id="map"></div>
-<button id="questionButton">Questions?</button>
+<button>Questions?</button>
+
 <footer>© 2025 Viktor Fernandez</footer>
 </div>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="js/scripts.js"></script>
-<script>
-const map = L.map('map').setView([41.8781, -87.6298], 12);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-L.marker([41.8781, -87.6298]).addTo(map)
-  .bindPopup('Chicago, IL')
-  .openPopup();
+<script src="scripts.js"></script>
+
+<!-- GOOGLE MAPS API -->
+<script async 
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 </script>
+
 </body>
 </html>
