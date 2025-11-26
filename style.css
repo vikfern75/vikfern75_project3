@@ -43,7 +43,7 @@ h1 {
     margin-top: 0;
 }
 
-button {
+button.question-button {
     background: #007BFF;
     color: white;
     border: none;
@@ -53,7 +53,7 @@ button {
     margin-top: 20px;
 }
 
-button:hover {
+button.question-button:hover {
     background: #0056b3;
 }
 
