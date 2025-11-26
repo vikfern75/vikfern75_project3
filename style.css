@@ -24,7 +24,8 @@ nav ul li a {
     font-weight: bold;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     text-decoration: underline;
 }
 
@@ -49,6 +50,7 @@ button {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 button:hover {
@@ -67,4 +69,22 @@ footer {
     width: 100%;
     border-radius: 8px;
     margin-top: 20px;
+}
+
+img, video, audio {
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .container {
+        width: 95%;
+        margin: 15px auto;
+        padding: 15px;
+    }
 }
